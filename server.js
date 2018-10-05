@@ -17,12 +17,11 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-/*app.use(helmet.frameguard({action: 'deny'}));
+app.use(helmet.frameguard({action: 'deny'}));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.xssFilter({}));
 app.use(helmet.noSniff());
 app.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'"] }} ))
-*/
 
 //Connect to mongo with mongoose
 mongoose.Promise = global.Promise
